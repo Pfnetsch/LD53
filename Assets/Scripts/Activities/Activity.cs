@@ -4,16 +4,19 @@ public abstract class Activity
 {
     protected string ActivityName { get; set; }
 
-    protected int Duration { get; set; }
+    protected int NeededTime { get; set; }
+
+    protected float ExpiredTime { get; set; }
 
     protected bool Finished { get; set; }
 
     // public string Description { get; set; }
 
-    public Activity(string activityName, int duration)
+    public Activity(string activityName, int neededTime)
     {
         ActivityName = activityName;
-        Duration = duration;
+        NeededTime = neededTime;
+        ExpiredTime = 0;
         Finished = false;
     }
 

@@ -14,20 +14,15 @@ public class Delivering : Activity
 
     public override void DoIt(Cat cat)
     {
-        float time = 0.0f;
-        float interpolationPeriod = 1;
-
-        int durationLeft = Delivery.Duration;
-
-        if (durationLeft > 0)
+        if (NeededTime > 0)
         {
-            time += Time.deltaTime;
+            ExpiredTime += Time.deltaTime;
 
-            if (time >= interpolationPeriod)
+            if (ExpiredTime >= 1)
             {
-                time = 0.0f;
+                ExpiredTime = 0.0f;
 
-                durationLeft -= 1;
+                NeededTime -= 1;
             }
         }
         else

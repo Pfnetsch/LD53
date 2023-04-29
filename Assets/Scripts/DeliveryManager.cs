@@ -97,7 +97,7 @@ public class DeliveryManager : MonoBehaviour
         {
             cat.Hunger -= 1;
 
-            if (cat.CurrentActivity == null)
+            if (cat.CurrentActivity is Resting)
             {
                 // Upgrades for Base will give more recreation for energy
                 cat.EnergyStatus += 1;
@@ -107,6 +107,7 @@ public class DeliveryManager : MonoBehaviour
                 cat.EnergyStatus -= 1;
             }
             Debug.Log(cat.Name + ": " + cat.EnergyStatus);
+            Debug.Log(cat.Name + ": " + cat.Hunger);
         }
     }
 

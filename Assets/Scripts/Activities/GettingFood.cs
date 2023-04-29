@@ -12,20 +12,20 @@ public class GettingFood : Activity
 
     public override void DoIt(Cat cat)
     {
-        float time = 0.0f;
-        float interpolationPeriod = 1;
-
         if (cat.Hunger < 100)
         {
+            ExpiredTime += Time.deltaTime;
 
-            time += Time.deltaTime;
-
-            if (time >= interpolationPeriod)
+            if (ExpiredTime >= 1)
             {
-                time = 0.0f;
+                ExpiredTime = 0.0f;
 
                 cat.Hunger += 2;
             }
+        }
+        else
+        {
+            Finished = true;
         }
     }
 }

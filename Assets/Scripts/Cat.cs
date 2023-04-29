@@ -11,13 +11,37 @@ public class Cat
     public Sprite Picture { get; set; }
 
     // Perks
-    public int Hunger { get; set; }
-
-    // Stats
+    public int Price { get; set; }
     public int WeightCapacity { get; set; }
 
-    public int EnergyStatus { get; set; }
+    // Stats
+    public int Hunger { get; set; }
+
+    private int _energyStatus;
+
+    public int EnergyStatus
+    {
+        get { return _energyStatus; }
+        set 
+        {
+            if (value <= 100 && value >= 0)
+            _energyStatus = value; 
+        }
+    }
+
 
     public Activity CurrentActivity { get; set; }
+
+
+    public Cat(string name, string bio, Sprite picture, int weightCapacity, int price)
+    {
+        Name = name;
+        Bio = bio;
+        Picture = picture;
+        WeightCapacity = weightCapacity;
+        Hunger = 100;
+        EnergyStatus = 90;
+        Price = price;
+    }
 
 }

@@ -4,14 +4,20 @@ using UnityEngine;
 
 public class Timer : MonoBehaviour
 {
+    public float time = 0.0f;
+    public float interpolationPeriod = 5;
+
     private float timeOfDay = 60;
     public float timeRemaining = 0;
     public bool timerIsRunning = false;
     public int days = 7;
 
+    // Classes affected by Interpolation Period
+    public GameObject gameManager;
+
     private void Start()
     {
-        // Starts the timer automatically
+        // Starts the Timer automatically
         timeRemaining = timeOfDay;
         timerIsRunning = true;
     }
@@ -22,6 +28,17 @@ public class Timer : MonoBehaviour
             if (timeRemaining > 0)
             {
                 timeRemaining -= Time.deltaTime;
+
+                // Interpolation Period
+                time += Time.deltaTime;
+
+                if (time >= interpolationPeriod)
+                {
+                    time = 0.0f;
+
+                    // every 5 seconds
+                    gameManager.BroadcastMessage("afterFiveSeconds");
+                }
             }
             else if (days > 0)
             {
@@ -29,6 +46,8 @@ public class Timer : MonoBehaviour
                 timeRemaining = timeOfDay;
                 days -= 1;
 
+                // every day
+                gameManager.BroadcastMessage("oneDayOver");
             }
             else
             {
@@ -38,4 +57,6 @@ public class Timer : MonoBehaviour
             }
         }
     }
+
+
 }

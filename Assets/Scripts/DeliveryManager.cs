@@ -7,7 +7,7 @@ public class DeliveryManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -17,7 +17,7 @@ public class DeliveryManager : MonoBehaviour
     }
 
     // CAT LIST
-    public List<Cat> MyProperty { get; set; }
+    public List<Cat> MyCats { get; set; }
 
     // DELIVERIES
     // list of available deliveries

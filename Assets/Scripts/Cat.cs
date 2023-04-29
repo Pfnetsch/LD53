@@ -4,12 +4,17 @@ using UnityEngine;
 
 public class Cat
 {
+    public string Name { get; set; }
 
-    public int Hunger { get; set; }
-
-    public int WeightCapacity { get; set; }
+    public string Bio { get; set; }
 
     public Sprite Picture { get; set; }
+
+    // Perks
+    public int Hunger { get; set; }
+
+    // Stats
+    public int WeightCapacity { get; set; }
 
     public int EnergyStatus { get; set; }
 

@@ -9,4 +9,5 @@ public class Delivery
     public int Payment { get; set; }
 
     public int Deadline { get; set; }
+
 }

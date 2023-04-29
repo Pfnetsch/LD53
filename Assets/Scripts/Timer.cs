@@ -37,7 +37,7 @@ public class Timer : MonoBehaviour
                     time = 0.0f;
 
                     // every 5 seconds
-                    gameManager.BroadcastMessage("afterFiveSeconds");
+                    gameManager.BroadcastMessage("AfterFiveSeconds");
                 }
             }
             else if (days > 0)
@@ -47,7 +47,7 @@ public class Timer : MonoBehaviour
                 days -= 1;
 
                 // every day
-                gameManager.BroadcastMessage("oneDayOver");
+                gameManager.BroadcastMessage("OneDayOver");
             }
             else
             {

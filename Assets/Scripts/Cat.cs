@@ -44,4 +44,26 @@ public class Cat
         Price = price;
     }
 
+    public void eat()
+    {
+        float time = 0.0f;
+        float interpolationPeriod = 1;
+
+        while (Hunger < 100)
+        {
+            CurrentActivity = new GettingFood();
+
+            time += Time.deltaTime;
+
+            if (time >= interpolationPeriod)
+            {
+                time = 0.0f;
+
+                Hunger += 2;
+            }
+        }
+    }
+
+
+
 }

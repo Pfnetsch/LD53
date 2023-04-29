@@ -8,4 +8,10 @@ public abstract class Activity
 
     // public string Description { get; set; }
 
+    public Activity(string activityName, int duration)
+    {
+        ActivityName = activityName;
+        Duration = duration;
+    }
+
 }

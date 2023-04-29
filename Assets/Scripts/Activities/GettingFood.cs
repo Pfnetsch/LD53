@@ -6,4 +6,10 @@ public class GettingFood : Activity
 {
     public int Cost { get; set; }
 
+    public GettingFood()
+        : base("GettingFood", 0)
+    {
+        Cost = 10;
+    }
+
 }

@@ -5,9 +5,6 @@ using UnityEngine;
 
 public class DeliveryManager : MonoBehaviour
 {
-    // MONEY
-    public int Money = 100;
-    public int FoodCost = 10;
 
     void Start()
     {
@@ -27,9 +24,24 @@ public class DeliveryManager : MonoBehaviour
 
     }
 
+    // MONEY
+    public int Money = 100;
+    public int FoodCost = 10;
+
+    public void AddMoney(int income)
+    {
+        Money += income;
+    }
+
+    public void SpendMoney(int price)
+    {
+        Money -= price;
+    }
+
     // CAT LIST
     public List<Sprite> Sprites;
     public List<Cat> MyCats { get; set; }
+    // cats on delivery tour: cats with activity delivering
 
     // DELIVERIES
     // list of available deliveries
@@ -39,6 +51,16 @@ public class DeliveryManager : MonoBehaviour
     public List<Delivery> ActiveDeliveries { get; set; }
     public List<Delivery> FinishedDeliveries { get; set; }
 
+    public void SendCatOnDelivery(Cat cat, Delivery delivery)
+    {
+        if (cat.CurrentActivity == null) 
+        {
+            Delivering delivering = new Delivering(delivery);
+            cat.CurrentActivity = delivering;
+        }
+    }
+
+    // method for finished delivery (addMoney etc)
 
 
     // BASE & CAT STATS
@@ -69,20 +91,9 @@ public class DeliveryManager : MonoBehaviour
         // can only be clicked if cat.Hunger < 100 && Money > 10
         if (cat.Hunger < 100 && Money >= FoodCost)
         {
-            float time = 0.0f;
-            float interpolationPeriod = 1;
+            SpendMoney(FoodCost);
 
-            while (cat.Hunger < 100)
-            {
-                time += Time.deltaTime;
-
-                if (time >= interpolationPeriod)
-                {
-                    time = 0.0f;
-
-                    cat.Hunger += 2;
-                }
-            }
+            cat.eat();
         }
     }
 
@@ -90,7 +101,7 @@ public class DeliveryManager : MonoBehaviour
     // TIME MANAGEMENT
     public Timer Timer;
 
-    public void afterFiveSeconds()
+    public void AfterFiveSeconds()
     {
         Debug.Log("interpolating");
 
@@ -101,7 +112,7 @@ public class DeliveryManager : MonoBehaviour
     // SHELTER
     public Shelter Shelter;
 
-    public void openShelter()
+    public void OpenShelter()
     {
 
     }

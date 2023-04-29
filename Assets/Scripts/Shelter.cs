@@ -18,7 +18,7 @@ public class Shelter : MonoBehaviour
         
     }
 
-    public void oneDayOver()
+    public void OneDayOver()
     {
         Debug.Log("one day over: get new cats in shelter");
         addCatsToShelter();

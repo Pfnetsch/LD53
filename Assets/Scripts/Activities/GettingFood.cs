@@ -4,16 +4,28 @@ using UnityEngine;
 
 public class GettingFood : Activity
 {
-    public int Cost { get; set; }
 
     public GettingFood()
         : base("GettingFood", 0)
     {
-        Cost = 10;
     }
 
-    public override bool DoIt()
+    public override void DoIt(Cat cat)
     {
-        throw new System.NotImplementedException();
+        float time = 0.0f;
+        float interpolationPeriod = 1;
+
+        if (cat.Hunger < 100)
+        {
+
+            time += Time.deltaTime;
+
+            if (time >= interpolationPeriod)
+            {
+                time = 0.0f;
+
+                cat.Hunger += 2;
+            }
+        }
     }
 }

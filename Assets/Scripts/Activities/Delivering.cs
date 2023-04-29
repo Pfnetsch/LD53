@@ -12,7 +12,7 @@ public class Delivering : Activity
         Delivery = delivery;
     }
 
-    public override bool DoIt()
+    public override void DoIt(Cat cat)
     {
         float time = 0.0f;
         float interpolationPeriod = 1;
@@ -32,7 +32,7 @@ public class Delivering : Activity
         }
         else
         {
-
+            Finished = true;
         }
     }
 }

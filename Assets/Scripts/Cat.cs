@@ -46,28 +46,7 @@ public class Cat
 
     public void DoActivity()
     {
-        CurrentActivity.DoIt();
-    }
-
-    public void eat()
-    {
-        float time = 0.0f;
-        float interpolationPeriod = 1;
-
-        CurrentActivity = new GettingFood();
-
-        while (Hunger < 100)
-        {
-
-            time += Time.deltaTime;
-
-            if (time >= interpolationPeriod)
-            {
-                time = 0.0f;
-
-                Hunger += 2;
-            }
-        }
+        CurrentActivity.DoIt(this);
     }
 
 }

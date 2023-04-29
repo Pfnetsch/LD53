@@ -2,17 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Resting : MonoBehaviour
+public class Resting : Activity
 {
-    // Start is called before the first frame update
-    void Start()
+    public Resting()
+        : base("Resting", 0)
     {
-        
     }
 
-    // Update is called once per frame
-    void Update()
+    public override void DoIt(Cat cat)
     {
-        
+
     }
 }

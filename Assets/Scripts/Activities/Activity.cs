@@ -2,9 +2,11 @@
 
 public abstract class Activity
 {
-    string ActivityName { get; set; }
+    protected string ActivityName { get; set; }
 
-    int Duration { get; set; }
+    protected int Duration { get; set; }
+
+    protected bool Finished { get; set; }
 
     // public string Description { get; set; }
 
@@ -12,8 +14,9 @@ public abstract class Activity
     {
         ActivityName = activityName;
         Duration = duration;
+        Finished = false;
     }
 
-    public abstract bool DoIt();
+    public abstract void DoIt(Cat cat);
 
 }

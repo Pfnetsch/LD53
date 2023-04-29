@@ -12,6 +12,8 @@ public class DeliveryManager : MonoBehaviour
         // Add Starter Cats to List
         Cat starterCat1 = new Cat("Gin", "Gin is very lively and loves to play with other cats.", Sprites[0], 2000, 100);
         Cat starterCat2 = new Cat("Tonic", "Tonic is a little shy with strangest but loves to cuddle.", Sprites[1], 2000, 100);
+        starterCat1.CurrentActivity = new Resting();
+        starterCat2.CurrentActivity = new Resting();
         MyCats = new List<Cat>();
         MyCats.Add(starterCat1);
         MyCats.Add(starterCat2);
@@ -24,7 +26,11 @@ public class DeliveryManager : MonoBehaviour
 
         // check Inputs
         // Input.GetMouseButtonDown(0)
-        
+
+        //if (cat.Hunger < 100 && Money >= FoodCost)
+        // {
+        //     SpendMoney(FoodCost);
+        // }
 
 
 
@@ -106,12 +112,7 @@ public class DeliveryManager : MonoBehaviour
 
     public void FeedCat(Cat cat)
     {
-        if (cat.Hunger < 100 && Money >= FoodCost)
-        {
-            SpendMoney(FoodCost);
 
-            cat.eat();
-        }
     }
 
 

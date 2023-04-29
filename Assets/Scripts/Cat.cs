@@ -44,14 +44,20 @@ public class Cat
         Price = price;
     }
 
+    public void DoActivity()
+    {
+        CurrentActivity.DoIt();
+    }
+
     public void eat()
     {
         float time = 0.0f;
         float interpolationPeriod = 1;
 
+        CurrentActivity = new GettingFood();
+
         while (Hunger < 100)
         {
-            CurrentActivity = new GettingFood();
 
             time += Time.deltaTime;
 
@@ -63,7 +69,5 @@ public class Cat
             }
         }
     }
-
-
 
 }

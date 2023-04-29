@@ -22,8 +22,28 @@ public class DeliveryManager : MonoBehaviour
     void Update()
     {
 
+        // check Inputs
+        // Input.GetMouseButtonDown(0)
+        
+
+
+
+
+
+
+
+
+
+
+        // Loop do Cats
+        foreach (Cat cat in MyCats)
+        {
+            cat.DoActivity();
+        }
+
     }
 
+    
     // MONEY
     public int Money = 100;
     public int FoodCost = 10;
@@ -55,8 +75,7 @@ public class DeliveryManager : MonoBehaviour
     {
         if (cat.CurrentActivity == null) 
         {
-            Delivering delivering = new Delivering(delivery);
-            cat.CurrentActivity = delivering;
+            AddMoney(delivery.Payment);
         }
     }
 
@@ -87,8 +106,6 @@ public class DeliveryManager : MonoBehaviour
 
     public void FeedCat(Cat cat)
     {
-        // costs something
-        // can only be clicked if cat.Hunger < 100 && Money > 10
         if (cat.Hunger < 100 && Money >= FoodCost)
         {
             SpendMoney(FoodCost);

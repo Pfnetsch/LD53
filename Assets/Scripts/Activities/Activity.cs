@@ -14,4 +14,6 @@ public abstract class Activity
         Duration = duration;
     }
 
+    public abstract bool DoIt();
+
 }

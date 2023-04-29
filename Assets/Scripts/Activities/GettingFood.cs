@@ -12,4 +12,8 @@ public class GettingFood : Activity
         Cost = 10;
     }
 
+    public override bool DoIt()
+    {
+        throw new System.NotImplementedException();
+    }
 }

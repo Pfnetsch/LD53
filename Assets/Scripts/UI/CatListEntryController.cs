@@ -4,18 +4,21 @@ using UnityEngine.UIElements;
 
 public class CatListEntryController
 {
+    private VisualElement _root;
     private Label _catNameLabel;
     private Label _catInfoLabel;
 
     public void SetVisualElement(VisualElement visualElement)
     {
-        _catNameLabel = visualElement.Q<Label>("CatName");
-        _catInfoLabel = visualElement.Q<Label>("CatInfo");
+        _root = visualElement;
+        _catNameLabel = _root.Q<Label>("CatName");
+        _catInfoLabel = _root.Q<Label>("CatInfo");
     }
 
     public void SetCatInformation(Cat cat)
     {
-        _catNameLabel.text = cat.Name;
+        cat.Bind(_root);
+        //_catNameLabel.text = cat.Name;
     }
 
 }

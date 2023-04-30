@@ -75,8 +75,8 @@ public class DeliveryManager : MonoBehaviour
     }
 
     // MONEY
-    public int Money = Global.StartingMoney;
-    public int FoodCost = Global.FoodCost;
+    private int Money = Global.StartingMoney;
+    private int FoodCost = Global.FoodCost;
 
     public void AddMoney(int income)
     {

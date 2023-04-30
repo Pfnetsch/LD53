@@ -5,11 +5,11 @@ using UnityEngine;
 public class Timer : MonoBehaviour
 {
     // Interpolations
-    public float time1 = 0.0f;
-    public float interpolationPeriod1 = 5;
+    private float time1 = 0.0f;
+    private float interpolationPeriod1 = 5;
 
-    public float time2 = 0.0f;
-    public float interpolationPeriod2 = 6;
+    private float time2 = 0.0f;
+    private float interpolationPeriod2 = 20;
 
     private float timeOfDay = Global.SecondsOfDay;
     public float timeRemaining = 0;

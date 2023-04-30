@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 
 public class Delivery
 {
@@ -18,10 +19,18 @@ public class Delivery
 
     public Delivery(int points)
     {
-        int randW = Random.Range(1, points);
+        int randW = Random.Range(5, points);
+        int randD = Random.Range(25, points);
 
-        Weight = randW * Global.DeliveryWeightFactor;
+        int randP = (randW + randD) / 2; // Mean value of weight and duration
 
-        Payment = randW * Global.DeliveryPaymentFactor;
+        Weight = Global.RoundToNearestX((randW * Global.DeliveryWeightFactor), 100);
+        Duration = Global.RoundToNearestX((randD * Global.DeliveryDurationFactor), 10);
+
+        Payment = Global.RoundToNearestX((randP * Global.DeliveryPaymentFactor), 10);
+
+        Deadline = Global.RoundToNearestX((Duration * Global.DeliveryDeadlineFactor), 10);
+
     }
+
 }

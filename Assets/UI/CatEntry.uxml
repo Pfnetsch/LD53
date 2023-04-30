@@ -3,7 +3,7 @@
     <ui:VisualElement name="Container" style="flex-direction: row; flex-grow: 1;">
         <ui:VisualElement name="Avatar" class="avatar" style="flex-grow: 0.2; padding-left: 0; padding-right: 0; width: auto; height: auto; padding-top: 0; padding-bottom: 0; margin-left: 10px; margin-right: 10px;" />
         <ui:VisualElement name="TextContainer" style="flex-grow: 0.8;">
-            <ui:Label text="Milchreis" display-tooltip-when-elided="true" name="CatName" class="catName" style="margin-top: 10px; margin-bottom: 10px;" />
+            <ui:Label text="Milchreis" display-tooltip-when-elided="true" name="CatName" binding-path="name" class="catName" style="margin-top: 10px; margin-bottom: 10px;" />
             <ui:Label text="Delivery: 1234&#10;Hunger: 1234" display-tooltip-when-elided="true" name="CatInfo" class="catInfo" />
         </ui:VisualElement>
     </ui:VisualElement>

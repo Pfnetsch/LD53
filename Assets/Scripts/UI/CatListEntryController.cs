@@ -1,17 +1,24 @@
+using UnityEditor;
+using UnityEditor.UIElements;
 using UnityEngine.UIElements;
 
 public class CatListEntryController
 {
-    Label _catName;
+    private VisualElement _root;
+    private Label _catNameLabel;
+    private Label _catInfoLabel;
 
     public void SetVisualElement(VisualElement visualElement)
     {
-        _catName = visualElement.Q<Label>("CatName");
+        _root = visualElement;
+        _catNameLabel = _root.Q<Label>("CatName");
+        _catInfoLabel = _root.Q<Label>("CatInfo");
     }
 
     public void SetCatInformation(Cat cat)
     {
-        _catName.text = cat.Name;
+        cat.Bind(_root);
+        //_catNameLabel.text = cat.Name;
     }
 
 }

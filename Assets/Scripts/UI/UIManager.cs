@@ -32,13 +32,13 @@ public class UIManager : MonoBehaviour
             var newListEntry = CatEntryTemplate.Instantiate();
 
             // Instantiate a controller for the data
-            var newListEntrLogic = new CatListEntryController();
+            var newListEntryLogic = new CatListEntryController();
 
             // Assign the controller script to the visual element
-            newListEntry.userData = newListEntrLogic;
+            newListEntry.userData = newListEntryLogic;
 
             // Initialize the controller script
-            newListEntrLogic.SetVisualElement(newListEntry);
+            newListEntryLogic.SetVisualElement(newListEntry);
 
             // Return the root of the instantiated visual tree
             return newListEntry;

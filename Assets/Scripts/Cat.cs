@@ -2,11 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Cat
+public class Cat : UINotifyProperty
 {
-
     // CAT
-    public string Name { get; set; }
+
+    public string Name
+    {
+        get => name;
+        set
+        {
+            name = value;
+            NotifyValueChanged(value);
+        }
+    }
 
     public string Bio { get; set; }
 
@@ -20,14 +28,15 @@ public class Cat
     public int Hunger { get; set; }
 
     private int _energyStatus;
+    private string name;
 
     public int EnergyStatus
     {
         get { return _energyStatus; }
-        set 
+        set
         {
             if (value <= 100 && value >= 0)
-            _energyStatus = value; 
+                _energyStatus = value;
         }
     }
 

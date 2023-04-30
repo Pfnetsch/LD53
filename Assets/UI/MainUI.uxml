@@ -10,16 +10,17 @@
         <ui:VisualElement name="Paw" style="width: 60px; height: 60px; flex-direction: column; background-image: url(&apos;project://database/Assets/Sprites/Paw.png?fileID=21300000&amp;guid=8fdcecb362b9014449c9d170dae56156&amp;type=3#Paw&apos;); -unity-slice-left: 0; padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 0; margin-left: 10px; margin-right: 10px; margin-top: 10px; margin-bottom: 10px; -unity-background-scale-mode: scale-to-fit;" />
         <ui:Label text="Cat Delivery Force" display-tooltip-when-elided="true" class="title" style="padding-left: 40px; padding-right: 0; width: auto;" />
     </ui:VisualElement>
-    <ui:VisualElement name="MainContainer" style="flex-direction: row; height: auto; position: absolute; bottom: 0; right: 0; top: 100px; left: 0;">
+    <ui:VisualElement name="MainContainer" style="flex-direction: row; height: auto; position: relative; flex-grow: 1; padding-top: 0; padding-left: 0; padding-right: 0; padding-bottom: 0; margin-top: 10px;">
         <ui:VisualElement name="LeftContainer" style="left: 0; position: absolute; width: 20%; top: 0; bottom: 0;">
             <ui:Button text="Shelter" display-tooltip-when-elided="true" class="buttonsLeft" />
             <ui:Button text="Orders" display-tooltip-when-elided="true" class="buttonsLeft" />
         </ui:VisualElement>
         <ui:VisualElement name="CenterContainer" style="top: 0; bottom: 0; left: 20%; width: 50%;">
-            <ui:ListView focusable="true" name="CenterList" class="centerListItems" style="top: auto; bottom: auto;" />
+            <ui:ListView focusable="true" name="CenterList" class="centerListItems" style="top: auto; bottom: auto; flex-grow: 1;" />
         </ui:VisualElement>
         <ui:VisualElement name="RightContainer" style="right: 0; position: absolute; width: 30%; top: 0; bottom: 0;">
             <ui:VisualElement name="Map" style="height: auto; background-color: rgb(154, 137, 137); padding-top: 100%;" />
+            <ui:VisualElement />
         </ui:VisualElement>
     </ui:VisualElement>
 </ui:UXML>

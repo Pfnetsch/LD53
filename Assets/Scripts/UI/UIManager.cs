@@ -7,6 +7,8 @@ using UnityEngine.UIElements;
 
 public class UIManager : MonoBehaviour
 {
+    public VisualTreeAsset CatEntryTemplate;
+
     UIDocument _mainUI;
     ListView _listViewCats;
 
@@ -22,25 +24,45 @@ public class UIManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        // Create a list of data. In this case, numbers from 1 to 1000.
-        const int itemCount = 10;
-        var items = new List<string>(itemCount);
-        for (int i = 1; i <= itemCount; i++)
-            items.Add("Cat number: " + i.ToString());
+        Cat starterCat1 = new Cat("Gin", "Gin is very lively and loves to play with other cats.", null, 2000, 100);
+        Cat starterCat2 = new Cat("Tonic", "Tonic is a little shy with strangest but loves to cuddle.", null, 2000, 100);
 
-        Func<VisualElement> makeItem = () => new Label();
+        var items = new List<Cat>() { starterCat1, starterCat2 };
+
+
+        Func<VisualElement> makeItem = () =>
+        {
+            // Instantiate the UXML template for the entry
+            var newListEntry = CatEntryTemplate.Instantiate();
+
+            // Instantiate a controller for the data
+            var newListEntrLogic = new CatListEntryController();
+
+            // Assign the controller script to the visual element
+            newListEntry.userData = newListEntrLogic;
+
+            // Initialize the controller script
+            newListEntrLogic.SetVisualElement(newListEntry);
+
+            // Return the root of the instantiated visual tree
+            return newListEntry;
+        };
 
         // As the user scrolls through the list, the ListView object
         // will recycle elements created by the "makeItem"
         // and invoke the "bindItem" callback to associate
         // the element with the matching data item (specified as an index in the list)
-        Action<VisualElement, int> bindItem = (e, i) => (e as Label).text = items[i];
+        Action<VisualElement, int> bindItem = (item, idx) =>
+        {
+            ((item.userData) as CatListEntryController).SetCatInformation(items[idx]);
+        };
 
         Debug.Log("Generate Items for ListView");
 
         _listViewCats.makeItem = makeItem;
         _listViewCats.bindItem = bindItem;
         _listViewCats.itemsSource = items;
+        _listViewCats.fixedItemHeight = 120;
         _listViewCats.selectionType = SelectionType.Multiple;
 
         // Callback invoked when the user changes the selection inside the ListView

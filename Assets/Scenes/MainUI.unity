@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 276164938}
   - component: {fileID: 276164939}
   m_Layer: 5
-  m_Name: UIDocument
+  m_Name: UI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -184,6 +184,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc1d9072bb7a76547808bccdad98fadf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CatEntryTemplate: {fileID: 9197481963319205126, guid: fbbd0d34953633141a273d4df601bb1c, type: 3}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0

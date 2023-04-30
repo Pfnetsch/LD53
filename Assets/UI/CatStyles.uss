@@ -1,0 +1,15 @@
+.avatar {
+}
+
+.catName {
+    font-size: 20px;
+    -unity-font-definition: resource('Fonts & Materials/TeenyTinyPixls-o2zo SDF');
+}
+
+.catInfo {
+    font-size: 12px;
+    -unity-font-definition: resource('Fonts & Materials/TeenyTinyPixls-o2zo SDF');
+    -unity-text-align: upper-left;
+    word-spacing: 0;
+    -unity-paragraph-spacing: 40px;
+}

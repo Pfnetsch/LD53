@@ -1,0 +1,120 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: CatAtlas
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 0
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings:
+    - serializedVersion: 3
+      m_BuildTarget: DefaultTexturePlatform
+      m_MaxTextureSize: 2048
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: -1
+      m_TextureCompression: 0
+      m_CompressionQuality: 50
+      m_CrunchedCompression: 0
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 0
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 0
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 1
+      enableAlphaDilation: 0
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 2800000, guid: e3f5edce6f5bf7e4c8d16f64ffaca9da, type: 3}
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 640187101, guid: e3f5edce6f5bf7e4c8d16f64ffaca9da, type: 3}
+  - {fileID: -702849777, guid: e3f5edce6f5bf7e4c8d16f64ffaca9da, type: 3}
+  - {fileID: 132547461, guid: e3f5edce6f5bf7e4c8d16f64ffaca9da, type: 3}
+  - {fileID: 393720881, guid: e3f5edce6f5bf7e4c8d16f64ffaca9da, type: 3}
+  - {fileID: -702566536, guid: e3f5edce6f5bf7e4c8d16f64ffaca9da, type: 3}
+  - {fileID: -941567533, guid: e3f5edce6f5bf7e4c8d16f64ffaca9da, type: 3}
+  - {fileID: -2043206253, guid: e3f5edce6f5bf7e4c8d16f64ffaca9da, type: 3}
+  - {fileID: -180341538, guid: e3f5edce6f5bf7e4c8d16f64ffaca9da, type: 3}
+  - {fileID: 854390492, guid: e3f5edce6f5bf7e4c8d16f64ffaca9da, type: 3}
+  - {fileID: 1843315638, guid: e3f5edce6f5bf7e4c8d16f64ffaca9da, type: 3}
+  - {fileID: 1281599350, guid: e3f5edce6f5bf7e4c8d16f64ffaca9da, type: 3}
+  - {fileID: -1166019576, guid: e3f5edce6f5bf7e4c8d16f64ffaca9da, type: 3}
+  - {fileID: -1078553817, guid: e3f5edce6f5bf7e4c8d16f64ffaca9da, type: 3}
+  - {fileID: 43051154, guid: e3f5edce6f5bf7e4c8d16f64ffaca9da, type: 3}
+  - {fileID: -1298348274, guid: e3f5edce6f5bf7e4c8d16f64ffaca9da, type: 3}
+  - {fileID: 1023883970, guid: e3f5edce6f5bf7e4c8d16f64ffaca9da, type: 3}
+  - {fileID: -1030187293, guid: e3f5edce6f5bf7e4c8d16f64ffaca9da, type: 3}
+  - {fileID: 1466334640, guid: e3f5edce6f5bf7e4c8d16f64ffaca9da, type: 3}
+  - {fileID: 1156810517, guid: e3f5edce6f5bf7e4c8d16f64ffaca9da, type: 3}
+  - {fileID: -44534350, guid: e3f5edce6f5bf7e4c8d16f64ffaca9da, type: 3}
+  - {fileID: 1275032548, guid: e3f5edce6f5bf7e4c8d16f64ffaca9da, type: 3}
+  - {fileID: 1269934239, guid: e3f5edce6f5bf7e4c8d16f64ffaca9da, type: 3}
+  - {fileID: -568837235, guid: e3f5edce6f5bf7e4c8d16f64ffaca9da, type: 3}
+  - {fileID: -380914619, guid: e3f5edce6f5bf7e4c8d16f64ffaca9da, type: 3}
+  - {fileID: 815155852, guid: e3f5edce6f5bf7e4c8d16f64ffaca9da, type: 3}
+  - {fileID: 1809908101, guid: e3f5edce6f5bf7e4c8d16f64ffaca9da, type: 3}
+  - {fileID: 1013701740, guid: e3f5edce6f5bf7e4c8d16f64ffaca9da, type: 3}
+  - {fileID: 1819900407, guid: e3f5edce6f5bf7e4c8d16f64ffaca9da, type: 3}
+  - {fileID: -860294202, guid: e3f5edce6f5bf7e4c8d16f64ffaca9da, type: 3}
+  - {fileID: 1692198981, guid: e3f5edce6f5bf7e4c8d16f64ffaca9da, type: 3}
+  - {fileID: -1367911839, guid: e3f5edce6f5bf7e4c8d16f64ffaca9da, type: 3}
+  - {fileID: -12485073, guid: e3f5edce6f5bf7e4c8d16f64ffaca9da, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - Cats24_8
+  - Cats24_7
+  - Cats24_6
+  - Cats24_5
+  - Cats24_4
+  - Cats24_3
+  - Cats24_2
+  - Cats24_1
+  - Cats24_0
+  - Cats24_27
+  - Cats24_30
+  - Cats24_26
+  - Cats24_31
+  - Cats24_25
+  - Cats24_24
+  - Cats24_23
+  - Cats24_22
+  - Cats24_18
+  - Cats24_21
+  - Cats24_19
+  - Cats24_20
+  - Cats24_12
+  - Cats24_13
+  - Cats24_10
+  - Cats24_29
+  - Cats24_11
+  - Cats24_28
+  - Cats24_16
+  - Cats24_17
+  - Cats24_14
+  - Cats24_15
+  - Cats24_9
+  m_RenderDataMap: {}
+  m_Tag: CatAtlas
+  m_IsVariant: 0

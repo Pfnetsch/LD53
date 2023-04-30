@@ -5,7 +5,6 @@ using UnityEngine;
 public class Cat : UINotifyProperty
 {
     // CAT
-
     public string Name
     {
         get => name;
@@ -55,7 +54,7 @@ public class Cat : UINotifyProperty
         Price = price;
     }
 
-    public Cat(int points)
+    public Cat(int points, Sprite sprite)
     {
         // 100 Points = max. Cat
         int randC = Random.Range(1, points);
@@ -70,6 +69,8 @@ public class Cat : UINotifyProperty
         // Stats
         Hunger = 100;
         EnergyStatus = 100;
+
+        Picture = sprite; 
     }
 
     public void DoActivity()

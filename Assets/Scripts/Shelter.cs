@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.U2D;
 
 public class Shelter : MonoBehaviour
 {
@@ -15,9 +16,13 @@ public class Shelter : MonoBehaviour
 
     public void GenerateCatsForShelter(int numberOfCats)
     {
+        ShelterCats.Clear();
+
         for (int i = 0; i < numberOfCats; i++)
         {
-            Cat c = new Cat(Global.MaxCatPointList[Global.Day - 1]);
+
+            Sprite sprite = DeliveryManager.Instance.GetNewCatSprite();
+            Cat c = new Cat(Global.MaxCatPointList[Global.Day - 1], sprite);
             Debug.Log(c);
             ShelterCats.Add(c);
         }

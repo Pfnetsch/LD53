@@ -9,9 +9,12 @@ public class UIManager : MonoBehaviour
 {
     public VisualTreeAsset CatEntryTemplate;
 
+    public UIDocument ShelterUI;
+
     private UIDocument _mainUI;
     private ListView _listViewCats;
     private ProgressBar _clockProgressBar;
+    private Button _shelterButton;
 
     private List<Cat> _cats;
 
@@ -25,6 +28,10 @@ public class UIManager : MonoBehaviour
 
         _clockProgressBar = _mainUI.rootVisualElement.Q("ClockProgressBar") as ProgressBar;
         _clockProgressBar.highValue = Global.SecondsOfDay;
+
+        _shelterButton = _mainUI.rootVisualElement.Q("ShelterButton") as Button;
+
+        _shelterButton.RegisterCallback<ClickEvent>(OnShelterButtonClick);
     }
 
     // Start is called before the first frame update
@@ -76,13 +83,14 @@ public class UIManager : MonoBehaviour
 
     public void FillCatList()
     {
-        Cat starterCat1 = new Cat("Gin", "Gin is very lively and loves to play with other cats.", null, 2000, 100);
-        Cat starterCat2 = new Cat("Tonic", "Tonic is a little shy with strangest but loves to cuddle.", null, 2000, 100);
-
-        //_cats = DeliveryManager.
-
-        _cats = new List<Cat>() { starterCat1, starterCat2 };
+        _cats = DeliveryManager.Instance.CatForce;
 
         _listViewCats.itemsSource = _cats;
+    }
+
+    public void OnShelterButtonClick(ClickEvent evt)
+    {
+        ShelterUI.enabled = true;
+        // get ShelterCats from Shelter
     }
 }

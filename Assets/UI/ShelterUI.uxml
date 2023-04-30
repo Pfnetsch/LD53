@@ -1,0 +1,7 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:VisualElement name="ShelterVisualElement" style="height: 600px; background-color: rgb(56, 56, 56); width: 400px;">
+        <ui:Label text="Shelter Cats" display-tooltip-when-elided="true" name="ShelterTitle" tooltip="Please only take cats that you can care for." />
+        <ui:ListView focusable="true" name="ShelterCatsListView" />
+        <ui:Button text="Back" display-tooltip-when-elided="true" name="ShelterBackButton" />
+    </ui:VisualElement>
+</ui:UXML>

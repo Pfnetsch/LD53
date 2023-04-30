@@ -1,16 +1,30 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.U2D;
 
 public class DeliveryManager : MonoBehaviour
 {
+    public static DeliveryManager Instance;
+
+    public List<Cat> CatForce { get; set; } = new List<Cat>();
+
+    public SpriteAtlas CatAtlas;
+    private List<int> _notUsedSprites = new List<int> { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27 };
+
+    private void Awake()
+    {
+        if(Instance == null)
+        {
+            Instance = this;
+        }
+    }
+
     void Start()
     {
-
         // Add Starter Cats to List
-        Cat starterCat1 = new Cat("Gin", "Gin is very lively and loves to play with other cats.", Sprites[0], 2000, 100);
-        Cat starterCat2 = new Cat("Tonic", "Tonic is a little shy with strangest but loves to cuddle.", Sprites[1], 2000, 100);
+        Cat starterCat1 = new Cat("Gin", "Gin is very lively and loves to play with other cats.", GetNewCatSprite(), 2000, 100);
+        Cat starterCat2 = new Cat("Tonic", "Tonic is a little shy with strangest but loves to cuddle.", GetNewCatSprite(), 2000, 100);
         starterCat1.CurrentActivity = new Resting();
         starterCat2.CurrentActivity = new Resting();
         CatForce = new List<Cat>();
@@ -88,9 +102,16 @@ public class DeliveryManager : MonoBehaviour
         Money -= price;
     }
 
-    // CAT LIST
-    public List<Sprite> Sprites;
-    public List<Cat> CatForce { get; set; }
+    // CAT Stuff
+
+    public Sprite GetNewCatSprite()
+    {
+        var rand = Random.Range(0, (_notUsedSprites.Count - 1));
+        string nameOfSprite = "Cats24_" + _notUsedSprites[rand];
+        _notUsedSprites.RemoveAt(rand);
+
+        return CatAtlas.GetSprite(nameOfSprite);
+    }
 
 
     // DELIVERIES
@@ -147,14 +168,5 @@ public class DeliveryManager : MonoBehaviour
         Debug.Log("interpolating");
 
         StatusManagement();
-    }
-
-
-    // SHELTER
-    public Shelter Shelter;
-
-    public void OpenShelter()
-    {
-
     }
 }

@@ -9,7 +9,7 @@ public class CatListEntryController
     public void SetVisualElement(VisualElement visualElement)
     {
         _root = visualElement;
-        _avatar = _root.Q<Image>("Avatar");
+        _avatar = _root.Q<VisualElement>("Avatar");
         var infoLabel = _root.Q<Label>("lblInfo");
 
 
@@ -31,6 +31,7 @@ public class CatListEntryController
         cat.Bind(_root);
 
         // ToDo: Set Image
+        _avatar.style.unityBackgroundScaleMode = ScaleMode.ScaleToFit;
         _avatar.style.backgroundImage = new StyleBackground(cat.Picture);
     }
 

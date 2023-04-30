@@ -15,4 +15,13 @@ public class Delivery
     public string Title { get; set; }
 
     public string Description { get; set; }
+
+    public Delivery(int points)
+    {
+        int randW = Random.Range(1, points);
+
+        Weight = randW * Global.DeliveryWeightFactor;
+
+        Payment = randW * Global.DeliveryPaymentFactor;
+    }
 }

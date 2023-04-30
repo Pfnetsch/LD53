@@ -1,0 +1,11 @@
+.clock {
+}
+
+.clockProgress {
+}
+
+.title {
+    font-size: 50px;
+    -unity-font-style: normal;
+    -unity-text-align: middle-center;
+}

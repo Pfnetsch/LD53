@@ -14,23 +14,29 @@ public class TextDB
     public string[] DeliveryDescriptions = { 
         "Hi there, I was wondering if you could deliver a book to my address. It's not a very heavy book, so I don't think it will be a problem. Let me know if you need any more information from me.",
         "Hello, I'm interested in purchasing some cosmetics and was wondering if you could deliver them to me? I don't need a lot, just a small package of items that I can use for everyday use. Thank you!",
-        "Hey, I'm looking to add a new piece of clothing to my wardrobe and was hoping you could help me out. Can you deliver a single item to my address? I'm open to suggestions too if you have any!",
-        "Hi, I have a bit of a sweet tooth and was hoping to have some chocolates delivered to me. Do you have any small boxes available? Let me know!", "Hello, I'm interested in getting a new electronic device, like a wireless headphone or smartwatch. I've been looking around, and I was wondering if you could deliver something to me?",
-        "Hi there, I love to write and was hoping to get some new stationery items. Do you have a set of pens, pencils, and notebooks that you could deliver to me? Thank you!",
+        "Hey, can you please bring this love letter to my fiance? I just want to show her that I think of her.",
+        "Hey, I'm looking to add a new piece of clothing to my wardrobe and was hoping you could help me out. Can you deliver a pair of fancy socks to my address?",
+        "Hi, I have a bit of a sweet tooth and was hoping to have some chocolates delivered to me. Do you have any small boxes available? Let me know!", 
+        "Hello, I'm interested in getting a new smartwatch. I've been looking around, and I was wondering if you could deliver something to me?",
+        "Hi there, I love to write and was hoping to get some new stationery items. Do you have a set of pencils that you could deliver to me? Thank you!",
         "Hey, I'm really into cooking and was hoping to get some fresh herbs and spices delivered to me. Could you put together a small packet for me?",
-        "Hello, I'm a bit of a music lover and was hoping to get a small musical instrument, like a harmonica or recorder. Do you have any available for delivery?",
+        "Hello, I'm a bit of a music lover and was hoping to get a small musical instrument, like a harmonica. Do you have any available for delivery?",
         "Hi, I'm looking to improve my overall health and was wondering if you could deliver some supplements or vitamins to me? I don't need a lot, just a small package that I can take daily.",
-        "Hey there, I'm in the market for a new piece of jewelry or a watch. Do you have anything available for delivery? Thank you!",
-        "Hi, I have an important presentation tomorrow and I just realized I don't have a suitable outfit. Can you please deliver a piece of clothing that would be appropriate for a business setting? I need it urgently - would it be possible to get it within the next few hours?",
-        "Hello, I'm out of my regular supplements and I really need them to manage a health condition. Can you please deliver a small package of supplements as soon as possible? I would be willing to pay extra for expedited delivery.",
-        "Hey, I'm hosting a dinner party tonight and I need some fresh herbs and spices to complete the dishes I'm making. Can you please deliver a small packet of herbs and spices to my address within the next hour? I would be really grateful if you could!",
-        "Hi, I'm currently working on a project that requires a specific book that I don't have access to. Can you please deliver it to me as soon as possible? I need it within the next few hours if possible.",
-        "Hello, I'm in a bit of a bind and I need a new phone urgently. Can you please deliver a small electronic device like a smartphone or tablet to my address as soon as possible? I'm willing to pay extra for expedited delivery." 
+        "Hey there, I'm in the market for a new piece of jewelry. Do you have anything available for delivery? Thank you!",
+        "Hi, I have an important presentation tomorrow and I just realized I don't have a suitable outfit. Can you please deliver a me the suit? I need it urgently - would it be possible to get it within the next few hours?",
+        "Hello, I'm out of my regular supplements and I really need them to manage a health condition. Can you please deliver a small package of supplements as soon as possible?",
+        "Hey, I'm hosting a dinner party tonight and I need some fresh herbs and spices to complete the dishes I'm making. Can you please deliver a small packet of herbs and spices to my address? I would be really grateful if you could!",
+        "Hi, I'm currently working on a project that requires a specific book that I don't have access to. Can you please deliver it to me as soon as possible?",
+        "Hello, I'm in a bit of a bind and I need a new phone urgently. Can you please deliver the smartphone to my address as soon as possible?",
+        "Hi, I really need a notebook for my studies. Can you please deliver it to my adress?",
+        "Hey, can you please deliver this cake to my grandma? It is a suprise birthday present and I really hope that she likes it!",
+        "Hello, my dear! I hope you can deliver this thank-you card to my granddaughter! She was so nice and sent me a delicious birthday cake and now I want to thank her."
     };
 
     public string[] DeliveryTitles = {
         "Book Delivery",
         "Cosmetics Delivery",
+        "Love Letter",
         "Clothing Delivery",
         "Chocolate Delivery",
         "Electronic Device Delivery",
@@ -38,12 +44,15 @@ public class TextDB
         "Herbs and Spices Delivery",
         "Musical Instrument Delivery",
         "Supplements Delivery",
-        "Jewelry and Watch Delivery",
+        "Jewelry Delivery",
         "Urgent Business Clothing Delivery",
         "Urgent Supplements Delivery",
         "Urgent Herbs and Spices Delivery",
         "Urgent Book Delivery",
-        "Urgent Electronic Device Delivery"
+        "Urgent Electronic Device Delivery",
+        "Notebook Delivery",
+        "Cake Delivery",
+        "Thank-you Card"
     };
 
 }

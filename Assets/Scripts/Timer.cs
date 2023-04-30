@@ -7,10 +7,10 @@ public class Timer : MonoBehaviour
     public float time = 0.0f;
     public float interpolationPeriod = 5;
 
-    private float timeOfDay = 60;
+    private float timeOfDay = Global.SecondsOfDay;
     public float timeRemaining = 0;
     public bool timerIsRunning = false;
-    public static int days = 7;
+    public static int days = Global.NumberOfGameDays;
 
     // Classes affected by Interpolation Period
     public GameObject gameManager;
@@ -42,7 +42,7 @@ public class Timer : MonoBehaviour
             }
             else if (days > 0)
             {
-                Debug.Log("Day " + (days - 7) + " is over!");
+                Debug.Log("Day " + (days - 6) + " is over!");
                 timeRemaining = timeOfDay;
                 days -= 1;
 

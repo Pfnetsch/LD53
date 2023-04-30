@@ -51,15 +51,27 @@ public class Cat
         // 100 Points = max. Cat
         int randC = Random.Range(1, points);
         // int randS = Random.Range(1, 3);
+        // Speed = randS;
 
-        WeightCapacity = randC * Global.CatWeightFactor;
+        // int randP = (randC + (randS * 3)) / 2;
 
-        Price = randC * Global.CatPriceFactor;
+        WeightCapacity = Global.RoundToNearestX((randC * Global.CatWeightFactor), 100);
+        Price = Global.RoundToNearestX((randC * Global.CatPriceFactor), 10);
+
+        // Stats
+        Hunger = 100;
+        EnergyStatus = 100;
     }
 
     public void DoActivity()
     {
         CurrentActivity.DoIt(this);
+    }
+
+    public override string ToString()
+    {
+        string s = $"CAT: {Name}\nPerks: WeightCapacity {WeightCapacity}, Price {Price} - Stats: Hunger {Hunger}, Engergy {EnergyStatus}";
+        return s;
     }
 
 }

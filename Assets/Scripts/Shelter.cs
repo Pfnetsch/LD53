@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Shelter : MonoBehaviour
 {
-    public List<Cat> ShelterCats { get; set; }
+    public List<Cat> ShelterCats = new List<Cat>();
 
     // Start is called before the first frame update
     void Start()
@@ -21,12 +21,20 @@ public class Shelter : MonoBehaviour
     public void OneDayOver()
     {
         Debug.Log("one day over: get new cats in shelter");
-        addCatsToShelter();
+        Global.Day += 1;
+        GenerateCatsForShelter(3);
     }
 
-    public void addCatsToShelter()
+    public void GenerateCatsForShelter(int numberOfCats)
     {
+        for (int i = 0; i < numberOfCats; i++)
+        {
+            Cat c = new Cat(Global.MaxCatPointList[Global.Day - 1]);
+            Debug.Log(c);
+            ShelterCats.Add(c);
+        }
 
+        Debug.Log(ShelterCats);
     }
 
     public Cat buyCat()

@@ -4,8 +4,12 @@ using UnityEngine;
 
 public class Timer : MonoBehaviour
 {
-    public float time = 0.0f;
-    public float interpolationPeriod = 5;
+    // Interpolations
+    public float time1 = 0.0f;
+    public float interpolationPeriod1 = 5;
+
+    public float time2 = 0.0f;
+    public float interpolationPeriod2 = 6;
 
     private float timeOfDay = Global.SecondsOfDay;
     public float timeRemaining = 0;
@@ -30,19 +34,30 @@ public class Timer : MonoBehaviour
                 timeRemaining -= Time.deltaTime;
 
                 // Interpolation Period
-                time += Time.deltaTime;
+                time1 += Time.deltaTime;
 
-                if (time >= interpolationPeriod)
+                if (time1 >= interpolationPeriod1)
                 {
-                    time = 0.0f;
+                    time1 = 0.0f;
 
                     // every 5 seconds
                     gameManager.BroadcastMessage("AfterFiveSeconds");
                 }
+
+                time2 += Time.deltaTime;
+
+                if (time2 >= interpolationPeriod2)
+                {
+                    time2 = 0.0f;
+
+                    // every 20 seconds
+                    gameManager.BroadcastMessage("AfterTwentySeconds");
+                }
+
             }
             else if (days > 0)
             {
-                Debug.Log("Day " + (days - 6) + " is over!");
+                Debug.Log("Day " + (Global.Day) + " is over!");
                 timeRemaining = timeOfDay;
                 days -= 1;
 

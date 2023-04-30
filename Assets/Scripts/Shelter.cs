@@ -6,18 +6,6 @@ public class Shelter : MonoBehaviour
 {
     public List<Cat> ShelterCats = new List<Cat>();
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void OneDayOver()
     {
         Debug.Log("one day over: get new cats in shelter");
@@ -37,7 +25,7 @@ public class Shelter : MonoBehaviour
         Debug.Log(ShelterCats);
     }
 
-    public Cat buyCat()
+    public Cat BuyCat()
     {
         return null;
     }

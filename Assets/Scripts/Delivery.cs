@@ -19,8 +19,12 @@ public class Delivery
 
     public Delivery(int points)
     {
+        Debug.Log(points);
+
         int randW = Random.Range(5, points);
         int randD = Random.Range(25, points);
+
+        Debug.Log("randoms W + D: " + randW + " " + randD);
 
         int randP = (randW + randD) / 2; // Mean value of weight and duration
 
@@ -31,6 +35,11 @@ public class Delivery
 
         Deadline = Global.RoundToNearestX((Duration * Global.DeliveryDeadlineFactor), 10);
 
+    }
+
+    public override string ToString()
+    {
+        return $"DELIVERY: {Title}\nWeight {Weight}, Duration {Duration}, Deadline {Deadline}, Payment {Payment}";
     }
 
 }

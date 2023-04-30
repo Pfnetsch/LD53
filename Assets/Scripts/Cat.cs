@@ -44,6 +44,19 @@ public class Cat
         Price = price;
     }
 
+    public Cat()
+    {
+        // 100 Points = max. Cat
+        int randC = Random.Range(1, 100);
+        // int randS = Random.Range(1, 3);
+
+        WeightCapacity = randC * 20;
+
+
+
+
+    }
+
     public void DoActivity()
     {
         CurrentActivity.DoIt(this);

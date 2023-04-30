@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class DeliveryManager : MonoBehaviour
 {
+    int[] MaxCatPointList = { 50, 60, 70, 80, 90, 100, 100 };
+    int Day = 1;
 
     void Start()
     {
@@ -23,6 +25,7 @@ public class DeliveryManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
 
         // check Inputs
         // Input.GetMouseButtonDown(0)
@@ -138,6 +141,10 @@ public class DeliveryManager : MonoBehaviour
         StatusManagement();
     }
 
+    public void OneDayOver()
+    {
+        Day += 1;
+    }
 
     // SHELTER
     public Shelter Shelter;

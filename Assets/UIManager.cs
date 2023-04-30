@@ -26,7 +26,7 @@ public class UIManager : MonoBehaviour
         const int itemCount = 10;
         var items = new List<string>(itemCount);
         for (int i = 1; i <= itemCount; i++)
-            items.Add(i.ToString());
+            items.Add("Cat number: " + i.ToString());
 
         Func<VisualElement> makeItem = () => new Label();
 

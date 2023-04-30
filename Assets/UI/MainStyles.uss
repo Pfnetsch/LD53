@@ -18,3 +18,15 @@
     -unity-font: initial;
     -unity-font-definition: resource('Fonts & Materials/TeenyTinyPixls-o2zo SDF');
 }
+
+.buttonsLeft {
+    font-size: 18px;
+    -unity-font-definition: resource('Fonts & Materials/TeenyTinyPixls-o2zo SDF');
+    -unity-font-style: normal;
+    -unity-text-align: upper-center;
+}
+
+.centerListItems {
+    font-size: 18px;
+    -unity-font-definition: resource('Fonts & Materials/TeenyTinyPixls-o2zo SDF');
+}

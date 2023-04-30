@@ -711,5 +711,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5611982648221006742, guid: 636a1f28855093b40866a67e13a246be, type: 3}
+      propertyPath: CatAtlas
+      value: 
+      objectReference: {fileID: 4343727234628468602, guid: 3983d0ff8f31ec54cb24d947ea9cdc62, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 636a1f28855093b40866a67e13a246be, type: 3}

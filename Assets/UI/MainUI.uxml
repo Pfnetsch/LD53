@@ -3,7 +3,7 @@
     <ui:VisualElement name="Clock" style="transform-origin: center; height: 80px; right: 0; width: 105px; left: auto; flex-direction: column; justify-content: space-around; position: absolute; top: 0; margin-top: 0; padding-top: 5px; padding-right: 5px;">
         <ui:Label text="Day 1" display-tooltip-when-elided="true" class="clock" />
         <ui:Label text="10:30" display-tooltip-when-elided="true" class="clock" />
-        <ui:ProgressBar value="22" title="Next Day" class="clockProgress" style="-unity-text-align: upper-left;" />
+        <ui:ProgressBar value="22" title="Next Day" name="ClockProgressBar" focusable="false" high-value="0" class="clockProgress" style="-unity-text-align: upper-left;" />
     </ui:VisualElement>
     <ui:VisualElement name="Resources" style="position: absolute; right: 100px; top: 0; width: 100px; height: 80px;" />
     <ui:VisualElement name="Title" style="right: auto; padding-right: 200px; height: auto; flex-direction: row; justify-content: flex-start;">

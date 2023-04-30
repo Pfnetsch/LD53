@@ -12,7 +12,7 @@ public class Timer : MonoBehaviour
     private float interpolationPeriod2 = 20;
 
     private float timeOfDay = Global.SecondsOfDay;
-    public float timeRemaining = 0;
+    public static float TimeRemaining = 0;
     public bool timerIsRunning = false;
     public static int days = Global.NumberOfGameDays;
 
@@ -22,16 +22,16 @@ public class Timer : MonoBehaviour
     private void Start()
     {
         // Starts the Timer automatically
-        timeRemaining = timeOfDay;
+        TimeRemaining = timeOfDay;
         timerIsRunning = true;
     }
     void Update()
     {
         if (timerIsRunning)
         {
-            if (timeRemaining > 0)
+            if (TimeRemaining > 0)
             {
-                timeRemaining -= Time.deltaTime;
+                TimeRemaining -= Time.deltaTime;
 
                 // Interpolation Period
                 time1 += Time.deltaTime;
@@ -58,7 +58,7 @@ public class Timer : MonoBehaviour
             else if (days > 0)
             {
                 Debug.Log("Day " + (Global.Day) + " is over!");
-                timeRemaining = timeOfDay;
+                TimeRemaining = timeOfDay;
                 days -= 1;
 
                 // every day
@@ -67,7 +67,7 @@ public class Timer : MonoBehaviour
             else
             {
                 Debug.Log("Week is over! The end.");
-                timeRemaining = 0;
+                TimeRemaining = 0;
                 timerIsRunning = false;
             }
         }

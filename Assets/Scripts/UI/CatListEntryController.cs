@@ -19,6 +19,7 @@ public class CatListEntryController
     {
         cat.Bind(_root);
         //_catNameLabel.text = cat.Name;
+        // ToDo: Set Image
     }
 
 }

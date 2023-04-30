@@ -11,6 +11,7 @@ public class UIManager : MonoBehaviour
 
     private UIDocument _mainUI;
     private ListView _listViewCats;
+    private ProgressBar _clockProgressBar;
 
     private List<Cat> _cats;
 
@@ -21,6 +22,9 @@ public class UIManager : MonoBehaviour
         if (_mainUI == null) Debug.LogError("Main UI not found!");
 
         _listViewCats = _mainUI.rootVisualElement.Q("CenterList") as ListView;
+
+        _clockProgressBar = _mainUI.rootVisualElement.Q("ClockProgressBar") as ProgressBar;
+        _clockProgressBar.highValue = Global.SecondsOfDay;
     }
 
     // Start is called before the first frame update
@@ -67,7 +71,7 @@ public class UIManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        _clockProgressBar.value = Global.SecondsOfDay - Timer.TimeRemaining;
     }
 
     public void FillCatList()

@@ -5,6 +5,7 @@
         <ui:VisualElement name="TextContainer" style="flex-grow: 0.8;">
             <ui:Label text="Milchreis" display-tooltip-when-elided="true" name="CatName" binding-path="name" class="catName" style="margin-top: 10px; margin-bottom: 10px;" />
             <ui:Label text="Delivery: 1234&#10;Hunger: 1234" display-tooltip-when-elided="true" name="CatInfo" class="catInfo" />
+            <ui:ProgressBar value="22" title="my-progress" />
         </ui:VisualElement>
     </ui:VisualElement>
 </ui:UXML>

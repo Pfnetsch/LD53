@@ -1,19 +1,17 @@
-using UnityEditor;
-using UnityEditor.UIElements;
+using UnityEngine;
 using UnityEngine.UIElements;
 
 public class CatListEntryController
 {
     private VisualElement _root;
 
-    private Label _catNameLabel;
-
-
     public void SetVisualElement(VisualElement visualElement)
     {
         _root = visualElement;
-        _catNameLabel = _root.Q<Label>("CatName");
+        var infoLabel = _root.Q<Label>("lblInfo");
 
+
+        // Progressbar styling
         foreach (var pb in _root.Query("unity-progress-bar").Build())
         {
             pb.style.marginBottom = 6;
@@ -23,13 +21,19 @@ public class CatListEntryController
 
         //.unity-progress-bar__progress {
         //background - color: rgb(41, 159, 64);
+        infoLabel.RegisterCallback<MouseMoveEvent>(InfoLabelOnMouseMove);
     }
 
     public void SetCatInformation(Cat cat)
     {
         cat.Bind(_root);
-        //_catNameLabel.text = cat.Name;
+
         // ToDo: Set Image
+    }
+
+    public void InfoLabelOnMouseMove(MouseMoveEvent mouseMoveEvent)
+    {
+        Debug.Log("Mouse is on Info Label");
     }
 
 }

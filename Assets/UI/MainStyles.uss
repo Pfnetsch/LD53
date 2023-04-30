@@ -1,11 +1,20 @@
 .clock {
+    -unity-font-definition: resource('Fonts & Materials/TeenyTinyPixls-o2zo SDF');
+    font-size: 17px;
+    -unity-text-align: middle-center;
 }
 
 .clockProgress {
+    font-size: 12px;
+    -unity-font-definition: resource('Fonts & Materials/TeenyTinyPixls-o2zo SDF');
+    -unity-font-style: normal;
+    -unity-text-align: upper-center;
 }
 
 .title {
-    font-size: 50px;
+    font-size: 40px;
     -unity-font-style: normal;
     -unity-text-align: middle-center;
+    -unity-font: initial;
+    -unity-font-definition: resource('Fonts & Materials/TeenyTinyPixls-o2zo SDF');
 }

@@ -1,13 +1,24 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <Style src="project://database/Assets/UI/MainStyles.uss?fileID=7433441132597879392&amp;guid=61bfa63ac0f4f6e42a325a1de63da6d6&amp;type=3#MainStyles" />
-    <ui:VisualElement name="Clock" style="transform-origin: center; height: 80px; right: 0; width: 100px; left: auto; flex-direction: column; justify-content: space-around; position: absolute; top: 0;">
-        <ui:Label text="Day 1" display-tooltip-when-elided="true" class="clock" style="font-size: 20px; -unity-text-align: upper-center;" />
-        <ui:Label text="10:30" display-tooltip-when-elided="true" class="clock" style="font-size: 20px; -unity-text-align: upper-center;" />
-        <ui:ProgressBar value="22" title="Next Day" class="clockProgress" />
+    <ui:VisualElement name="Clock" style="transform-origin: center; height: 80px; right: 0; width: 105px; left: auto; flex-direction: column; justify-content: space-around; position: absolute; top: 0; margin-top: 0; padding-top: 5px; padding-right: 5px;">
+        <ui:Label text="Day 1" display-tooltip-when-elided="true" class="clock" />
+        <ui:Label text="10:30" display-tooltip-when-elided="true" class="clock" />
+        <ui:ProgressBar value="22" title="Next Day" class="clockProgress" style="-unity-text-align: upper-left;" />
     </ui:VisualElement>
     <ui:VisualElement name="Resources" style="position: absolute; right: 100px; top: 0; width: 100px; height: 80px;" />
     <ui:VisualElement name="Title" style="right: auto; padding-right: 200px; height: auto; flex-direction: row; justify-content: flex-start;">
         <ui:VisualElement name="Paw" style="width: 60px; height: 60px; flex-direction: column; background-image: url(&apos;project://database/Assets/Sprites/Paw.png?fileID=21300000&amp;guid=8fdcecb362b9014449c9d170dae56156&amp;type=3#Paw&apos;); -unity-slice-left: 0; padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 0; margin-left: 10px; margin-right: 10px; margin-top: 10px; margin-bottom: 10px; -unity-background-scale-mode: scale-to-fit;" />
         <ui:Label text="Cat Delivery Force" display-tooltip-when-elided="true" class="title" style="padding-left: 40px; padding-right: 0; width: auto;" />
+    </ui:VisualElement>
+    <ui:VisualElement name="MainContainer" style="flex-direction: row; height: auto; position: absolute; bottom: 0; right: 0; top: 100px; left: 0;">
+        <ui:VisualElement name="LeftContainer" style="left: 0; position: absolute; width: 200px; top: 0; bottom: 0;">
+            <ui:Button text="Button" display-tooltip-when-elided="true" />
+        </ui:VisualElement>
+        <ui:VisualElement name="CenterContainer" style="top: 0; bottom: 0; left: 200px;">
+            <ui:ListView focusable="true" name="CenterList" style="top: auto; bottom: auto;" />
+        </ui:VisualElement>
+        <ui:VisualElement name="RightContainer" style="right: 0; position: absolute; width: 300px; top: 0; bottom: 0;">
+            <ui:Button text="Button" display-tooltip-when-elided="true" />
+        </ui:VisualElement>
     </ui:VisualElement>
 </ui:UXML>

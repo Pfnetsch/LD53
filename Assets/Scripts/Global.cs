@@ -8,6 +8,10 @@ public static class Global
     public static int SecondsOfDay = 10;
     public static int NumberOfGameDays = 7;
 
+    // Money
+    public static int StartingMoney = 100;
+    public static int FoodCost = 10;
+
     // Day Points
     public static int[] MaxCatPointList = { 50, 60, 70, 80, 90, 100, 100 };
     public static int Day = 1;
@@ -19,19 +23,19 @@ public static class Global
 
 
     // Deliveries
-    public const float DeliveryPaymentFactor = 4f;
+    public const float DeliveryPaymentFactor = 2.5f;
 
     public const float DeliveryWeightFactor = 18f;
 
     public const float DeliveryDurationFactor = 0.4f;
 
-    public const float DeliveryDeadlineFactor = 0.4f;
+    public const float DeliveryDeadlineFactor = 2f;
 
 
 
 
     public static int RoundToNearestX(float number, int x)
     {
-        return (int)System.Math.Round(number / 100, 0) * x;
+        return ((int)System.Math.Round(number / x, 0)) * x;
     }
 }

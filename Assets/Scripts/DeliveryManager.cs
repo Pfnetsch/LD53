@@ -13,9 +13,9 @@ public class DeliveryManager : MonoBehaviour
         Cat starterCat2 = new Cat("Tonic", "Tonic is a little shy with strangest but loves to cuddle.", Sprites[1], 2000, 100);
         starterCat1.CurrentActivity = new Resting();
         starterCat2.CurrentActivity = new Resting();
-        MyCats = new List<Cat>();
-        MyCats.Add(starterCat1);
-        MyCats.Add(starterCat2);
+        CatForce = new List<Cat>();
+        CatForce.Add(starterCat1);
+        CatForce.Add(starterCat2);
 
     }
 
@@ -38,7 +38,7 @@ public class DeliveryManager : MonoBehaviour
 
 
         // Loop do Cats
-        foreach (Cat cat in MyCats)
+        foreach (Cat cat in CatForce)
         {
             if (cat.CurrentActivity.Finished)
             {
@@ -60,23 +60,23 @@ public class DeliveryManager : MonoBehaviour
     // BUTTONS - getcomponent verwenden?!
     public void FeedCat(int cat)
     {
-        if (MyCats[cat].CurrentActivity is Resting)
+        if (CatForce[cat].CurrentActivity is Resting)
         {
-            MyCats[cat].CurrentActivity = new GettingFood();
+            CatForce[cat].CurrentActivity = new GettingFood();
         }
     }
 
     public void SendCatOnDelivery(int cat)
     {
-        if (MyCats[cat].CurrentActivity is Resting)
+        if (CatForce[cat].CurrentActivity is Resting)
         {
-            MyCats[cat].CurrentActivity = new Delivering(SelectedDelivery);
+            CatForce[cat].CurrentActivity = new Delivering(SelectedDelivery);
         }
     }
 
     // MONEY
-    public int Money = 100;
-    public int FoodCost = 10;
+    public int Money = Global.StartingMoney;
+    public int FoodCost = Global.FoodCost;
 
     public void AddMoney(int income)
     {
@@ -90,19 +90,30 @@ public class DeliveryManager : MonoBehaviour
 
     // CAT LIST
     public List<Sprite> Sprites;
-    public List<Cat> MyCats { get; set; }
-    // cats on delivery tour: cats with activity delivering
+    public List<Cat> CatForce { get; set; }
+
 
     // DELIVERIES
     // list of available deliveries
     // list of active deliveries
     // list of finished deliveriesunit
-    public List<Delivery> AvailableDeliveries { get; set; }
-    public List<Delivery> ActiveDeliveries { get; set; }
-    public List<Delivery> FinishedDeliveries { get; set; }
+    public List<Delivery> AvailableDeliveries { get; set; } = new List<Delivery>();
+    public List<Delivery> ActiveDeliveries { get; set; } = new List<Delivery>();
+    public List<Delivery> FinishedDeliveries { get; set; } = new List<Delivery>();
 
     public Delivery SelectedDelivery { get; set; }
 
+    public void GenerateDelivery()
+    {
+        Delivery d = new Delivery(Global.MaxCatPointList[Global.Day - 1]);
+        Debug.Log(d);
+        AvailableDeliveries.Add(d);
+    }
+
+    public void AfterTwentySeconds()
+    {
+        GenerateDelivery();
+    }
 
 
     // BASE & CAT STATS
@@ -110,7 +121,7 @@ public class DeliveryManager : MonoBehaviour
 
     public void StatusManagement()
     {
-        foreach (Cat cat in MyCats)
+        foreach (Cat cat in CatForce)
         {
             cat.Hunger -= 1;
 

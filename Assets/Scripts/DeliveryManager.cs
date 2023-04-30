@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class DeliveryManager : MonoBehaviour
 {
+    int[] MaxCatPointList = { 50, 60, 70, 80, 90, 100, 100 };
+    int Day = 1;
 
     void Start()
     {
@@ -23,33 +25,58 @@ public class DeliveryManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
 
         // check Inputs
         // Input.GetMouseButtonDown(0)
-
+        
         //if (cat.Hunger < 100 && Money >= FoodCost)
         // {
         //     SpendMoney(FoodCost);
         // }
-
-
-
-
-
-
-
-
+        //if (cat.CurrentActivity == null)
+        //{
+        //    AddMoney(delivery.Payment);
+        //}
 
 
         // Loop do Cats
         foreach (Cat cat in MyCats)
         {
+            if (cat.CurrentActivity.Finished)
+            {
+                switch (cat.CurrentActivity)
+                {
+                    case Delivering:
+                        AddMoney(((Delivering)cat.CurrentActivity).Delivery.Payment);
+                        break;
+                    default:
+                        break;
+                }
+
+                cat.CurrentActivity = new Resting();
+            }
             cat.DoActivity();
         }
-
     }
 
-    
+    // BUTTONS - getcomponent verwenden?!
+    public void FeedCat(int cat)
+    {
+        if (MyCats[cat].CurrentActivity is Resting)
+        {
+            MyCats[cat].CurrentActivity = new GettingFood();
+        }
+    }
+
+    public void SendCatOnDelivery(int cat)
+    {
+        if (MyCats[cat].CurrentActivity is Resting)
+        {
+            MyCats[cat].CurrentActivity = new Delivering(SelectedDelivery);
+        }
+    }
+
     // MONEY
     public int Money = 100;
     public int FoodCost = 10;
@@ -77,15 +104,8 @@ public class DeliveryManager : MonoBehaviour
     public List<Delivery> ActiveDeliveries { get; set; }
     public List<Delivery> FinishedDeliveries { get; set; }
 
-    public void SendCatOnDelivery(Cat cat, Delivery delivery)
-    {
-        if (cat.CurrentActivity == null) 
-        {
-            AddMoney(delivery.Payment);
-        }
-    }
+    public Delivery SelectedDelivery { get; set; }
 
-    // method for finished delivery (addMoney etc)
 
 
     // BASE & CAT STATS
@@ -111,14 +131,8 @@ public class DeliveryManager : MonoBehaviour
         }
     }
 
-    public void FeedCat(Cat cat)
-    {
-
-    }
-
 
     // TIME MANAGEMENT
-    public Timer Timer;
 
     public void AfterFiveSeconds()
     {
@@ -127,6 +141,10 @@ public class DeliveryManager : MonoBehaviour
         StatusManagement();
     }
 
+    public void OneDayOver()
+    {
+        Day += 1;
+    }
 
     // SHELTER
     public Shelter Shelter;

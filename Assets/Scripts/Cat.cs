@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Cat
 {
+
+    // CAT
     public string Name { get; set; }
 
     public string Bio { get; set; }
@@ -42,6 +44,17 @@ public class Cat
         Hunger = 100;
         EnergyStatus = 90;
         Price = price;
+    }
+
+    public Cat(int points)
+    {
+        // 100 Points = max. Cat
+        int randC = Random.Range(1, points);
+        // int randS = Random.Range(1, 3);
+
+        WeightCapacity = randC * Global.CatWeightFactor;
+
+        Price = randC * Global.CatPriceFactor;
     }
 
     public void DoActivity()

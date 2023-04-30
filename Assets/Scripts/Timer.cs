@@ -10,7 +10,7 @@ public class Timer : MonoBehaviour
     private float timeOfDay = 60;
     public float timeRemaining = 0;
     public bool timerIsRunning = false;
-    public int days = 7;
+    public static int days = 7;
 
     // Classes affected by Interpolation Period
     public GameObject gameManager;

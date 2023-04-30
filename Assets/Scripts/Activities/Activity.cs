@@ -8,7 +8,7 @@ public abstract class Activity
 
     protected float ExpiredTime { get; set; }
 
-    protected bool Finished { get; set; }
+    public bool Finished { get; set; }
 
     // public string Description { get; set; }
 

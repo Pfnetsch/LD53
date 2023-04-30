@@ -9,7 +9,24 @@
 .catInfo {
     font-size: 12px;
     -unity-font-definition: resource('Fonts & Materials/TeenyTinyPixls-o2zo SDF');
-    -unity-text-align: upper-left;
+    -unity-text-align: middle-center;
     word-spacing: 0;
     -unity-paragraph-spacing: 40px;
+}
+
+.hungerAndEnergyBar {
+    margin-left: 3px;
+    margin-right: 3px;
+    margin-top: 3px;
+    margin-bottom: 3px;
+}
+
+.hungerAndEnergyBar .unity-progress-bar__background {
+    border-width: 0;
+    background-color: gray
+}
+
+.hungerAndEnergyBar .unity-progress-bar__progress {
+    background-color: green;
+    margin: 0px
 }

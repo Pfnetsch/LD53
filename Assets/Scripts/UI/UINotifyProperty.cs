@@ -82,6 +82,11 @@ public class UINotifyProperty : INotifyProperty
                     {
                         UpdateValue(bindElement.bindingPath, val.newValue);
                     });
+
+                    bindElement.RegisterCallback<ChangeEvent<float>>((val) =>
+                    {
+                        UpdateValue(bindElement.bindingPath, val.newValue);
+                    });
                 }
 
             }

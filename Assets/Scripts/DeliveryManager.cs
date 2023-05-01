@@ -25,7 +25,7 @@ public class DeliveryManager : MonoBehaviour
         // Add Starter Cats to List
         Cat starterCat1 = new Cat("Gin", "Gin is very lively and loves to play with other cats.", GetNewCatSprite(), 2000, 100);
         Cat starterCat2 = new Cat("Tonic", "Tonic is a little shy with strangest but loves to cuddle.", GetNewCatSprite(), 2000, 100);
-        starterCat1.CurrentActivity = new Resting();
+        starterCat1.CurrentActivity = new Delivering(GenerateDelivery());
         starterCat2.CurrentActivity = new Resting();
         CatForce = new List<Cat>();
         CatForce.Add(starterCat1);
@@ -124,11 +124,13 @@ public class DeliveryManager : MonoBehaviour
 
     public Delivery SelectedDelivery { get; set; }
 
-    public void GenerateDelivery()
+    public Delivery GenerateDelivery()
     {
         Delivery d = new Delivery(Global.MaxCatPointList[Global.Day - 1]);
         Debug.Log(d);
         AvailableDeliveries.Add(d);
+
+        return d;
     }
 
     public void AfterTwentySeconds()
@@ -149,13 +151,13 @@ public class DeliveryManager : MonoBehaviour
             if (cat.CurrentActivity is Resting)
             {
                 // Upgrades for Base will give more recreation for energy
-                cat.EnergyStatus += 1;
+                cat.Energy += 1;
             }
             else if (cat.CurrentActivity is Delivering)
             {
-                cat.EnergyStatus -= 1;
+                cat.Energy -= 1;
             }
-            Debug.Log(cat.Name + ": " + cat.EnergyStatus);
+            Debug.Log(cat.Name + ": " + cat.Energy);
             Debug.Log(cat.Name + ": " + cat.Hunger);
         }
     }

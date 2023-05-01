@@ -9,15 +9,15 @@
             </ui:VisualElement>
             <ui:VisualElement name="HungerContainer" style="flex-direction: row; height: 22px; margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0;">
                 <ui:Label text="Hunger: " display-tooltip-when-elided="true" name="lblHunger" class="catInfo" style="padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 0;" />
-                <ui:ProgressBar value="22" name="pbHunger" class="hungerAndEnergyBar" style="flex-grow: 0.5;" />
+                <ui:ProgressBar value="22" name="pbHunger" binding-path="hunger" class="hungerAndEnergyBar" style="flex-grow: 0.5;" />
             </ui:VisualElement>
             <ui:VisualElement name="EnergyContainer" style="flex-direction: row; height: 22px;">
                 <ui:Label text="Energy: " display-tooltip-when-elided="true" name="lblEnergy" class="catInfo" style="padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 0;" />
-                <ui:ProgressBar value="22" name="pbEnergy" class="hungerAndEnergyBar" style="flex-grow: 0.5;" />
+                <ui:ProgressBar value="22" name="pbEnergy" binding-path="energy" class="hungerAndEnergyBar" style="flex-grow: 0.5;" />
             </ui:VisualElement>
             <ui:VisualElement name="ActivityContainer" style="flex-direction: row; height: 22px;">
                 <ui:Label text="Current Activity:" display-tooltip-when-elided="true" class="catInfo" style="padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 0;" />
-                <ui:Label text="Resting" display-tooltip-when-elided="true" class="catInfo" style="color: rgb(77, 171, 108);" />
+                <ui:Label text="Resting" display-tooltip-when-elided="true" enable-rich-text="false" binding-path="activitytext" class="catInfo" style="color: rgb(77, 171, 108);" />
             </ui:VisualElement>
         </ui:VisualElement>
     </ui:VisualElement>

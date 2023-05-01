@@ -22,4 +22,8 @@ public abstract class Activity
 
     public abstract void DoIt(Cat cat);
 
+    public override string ToString()
+    {
+        return this.GetType().Name.ToString();
+    }
 }

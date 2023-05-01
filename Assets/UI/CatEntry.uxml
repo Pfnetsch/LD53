@@ -17,7 +17,7 @@
             </ui:VisualElement>
             <ui:VisualElement name="ActivityContainer" style="flex-direction: row; height: 22px;">
                 <ui:Label text="Current Activity:" display-tooltip-when-elided="true" class="catInfo" style="padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 0;" />
-                <ui:Label text="Resting" display-tooltip-when-elided="true" class="catInfo" style="color: rgb(77, 171, 108);" />
+                <ui:Label text="Resting" display-tooltip-when-elided="true" enable-rich-text="false" binding-path="activitytext" class="catInfo" style="color: rgb(77, 171, 108);" />
             </ui:VisualElement>
         </ui:VisualElement>
     </ui:VisualElement>

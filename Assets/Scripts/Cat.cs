@@ -27,7 +27,9 @@ public class Cat : UINotifyProperty
     // Stats
     private float hunger;
     private float energy;
-  
+    private string activityText;
+    private Activity currentActivity;
+
     public float Energy
     {
         get { return energy; }
@@ -42,19 +44,37 @@ public class Cat : UINotifyProperty
     }
 
     public float Hunger
-    { 
-        get => hunger; 
+    {
+        get => hunger;
         set
         {
             if (value <= 100 && value >= 0)
             {
                 hunger = value;
                 NotifyValueChanged(value);
-            } 
+            }
         }
     }
 
-    public Activity CurrentActivity { get; set; }
+    public string ActivityText
+    {
+        get => activityText;
+        set
+        {
+            activityText = value;
+            NotifyValueChanged(value);
+        }
+    }
+
+    public Activity CurrentActivity
+    {
+        get => currentActivity;
+        set
+        {
+            currentActivity = value;
+            ActivityText = value.ToString();
+        }
+    }
 
 
     public Cat(string name, string bio, Sprite picture, int weightCapacity, int price)

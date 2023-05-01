@@ -87,6 +87,11 @@ public class UINotifyProperty : INotifyProperty
                     {
                         UpdateValue(bindElement.bindingPath, val.newValue);
                     });
+
+                    bindElement.RegisterCallback<ChangeEvent<int>>((val) =>
+                    {
+                        UpdateValue(bindElement.bindingPath, val.newValue);
+                    });
                 }
 
             }

@@ -23,7 +23,8 @@ public class CatListEntryController
 
         //.unity-progress-bar__progress {
         //background - color: rgb(41, 159, 64);
-        infoLabel.RegisterCallback<MouseMoveEvent>(InfoLabelOnMouseMove);
+        infoLabel?.RegisterCallback<MouseMoveEvent>(InfoLabelOnMouseMove);
+
     }
 
     public void SetCatInformation(Cat cat)

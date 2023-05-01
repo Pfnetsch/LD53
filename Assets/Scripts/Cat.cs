@@ -21,14 +21,30 @@ public class Cat : UINotifyProperty
     public Sprite Picture { get; set; }
 
     // Perks
-    public int Price { get; set; }
-    public int WeightCapacity { get; set; }
+    public int Price { get => price; 
+        set 
+        { 
+            price = value;
+            NotifyValueChanged(value);
+        }
+    }
+    public int WeightCapacity
+    {
+        get => weightCapacity;
+        set
+        {
+            weightCapacity = value;
+            NotifyValueChanged(value);
+        }
+    }
 
     // Stats
     private float hunger;
     private float energy;
     private string activityText;
     private Activity currentActivity;
+    private int weightCapacity;
+    private int price;
 
     public float Energy
     {
@@ -90,6 +106,8 @@ public class Cat : UINotifyProperty
 
     public Cat(int points, Sprite sprite)
     {
+        
+
         // 100 Points = max. Cat
         int randC = Random.Range(1, points);
         // int randS = Random.Range(1, 3);

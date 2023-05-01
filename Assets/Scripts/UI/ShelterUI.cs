@@ -7,8 +7,6 @@ using System.Linq;
 
 public class ShelterUI : MonoBehaviour
 {
-    private List<Cat> _shelterCats;
-
     public VisualTreeAsset ShelterCatEntryTemplate;
 
     private UIDocument _shelterUI;
@@ -55,7 +53,7 @@ public class ShelterUI : MonoBehaviour
         // the element with the matching data item (specified as an index in the list)
         Action<VisualElement, int> bindItem = (item, idx) =>
         {
-            ((item.userData) as CatListEntryController).SetCatInformation(_shelterCats[idx]);
+            ((item.userData) as CatListEntryController).SetCatInformation(Shelter.Instance.ShelterCats[idx]);
         };
 
         _listViewShelterCats.makeItem = makeItem;

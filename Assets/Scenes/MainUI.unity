@@ -601,7 +601,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de03ec6246068f543a4864d7afef059d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ShelterCatEntryTemplate: {fileID: 0}
+  ShelterCatEntryTemplate: {fileID: 9197481963319205126, guid: 73fe9849c90f5af4c9504dcfbbb5b309, type: 3}
 --- !u!1 &1731613368
 GameObject:
   m_ObjectHideFlags: 0

@@ -88,7 +88,7 @@ public class Cat : UINotifyProperty
         set
         {
             currentActivity = value;
-            ActivityText = value.ToString();
+            if (value != null) ActivityText = value.ToString();
         }
     }
 

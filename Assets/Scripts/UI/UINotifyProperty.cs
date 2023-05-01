@@ -6,6 +6,7 @@ using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UIElements;
+using static UnityEngine.Rendering.DebugUI;
 
 public interface INotifyProperty
 {
@@ -119,6 +120,14 @@ public class UINotifyProperty : INotifyProperty
 
     public virtual void UpdateValue(string fieldName, object value)
     {
-        Fields.FirstOrDefault(f => f.Name == fieldName)?.SetValue(this, value);
+        var fieldInfo = Fields.FirstOrDefault(f => f.Name == fieldName);
+
+        if (fieldInfo != null)
+        {
+            if (fieldInfo.FieldType == typeof(int))
+                value = int.Parse(value.ToString());
+
+            fieldInfo.SetValue(this, value);
+        } 
     }
 }

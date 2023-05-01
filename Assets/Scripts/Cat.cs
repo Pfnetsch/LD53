@@ -1,9 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class Cat : UINotifyProperty
 {
+    private List<int> _notUsedBios = Enumerable.Range(0, (TextDB.CatBios.Length - 1)).ToList();
+    private List<int> _notUsedNames = Enumerable.Range(0, (TextDB.CatNames.Length - 1)).ToList();
+
     // CAT
     private string name;
     public string Name
@@ -106,7 +110,8 @@ public class Cat : UINotifyProperty
 
     public Cat(int points, Sprite sprite)
     {
-        
+        Name = GetRandomCatName();
+        Bio = GetRandomCatBio();
 
         // 100 Points = max. Cat
         int randC = Random.Range(1, points);
@@ -123,6 +128,22 @@ public class Cat : UINotifyProperty
         Energy = 100;
 
         Picture = sprite;
+    }
+
+    private string GetRandomCatBio()
+    {
+        var rand = Random.Range(0, (_notUsedBios.Count - 1));
+        _notUsedBios.RemoveAt(rand);
+
+        return TextDB.CatBios[rand];
+    }
+
+    private string GetRandomCatName()
+    {
+        var rand = Random.Range(0, (_notUsedNames.Count - 1));
+        _notUsedNames.RemoveAt(rand);
+
+        return TextDB.CatNames[rand];
     }
 
     public void DoActivity()

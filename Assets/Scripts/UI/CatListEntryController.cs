@@ -16,7 +16,7 @@ public class CatListEntryController
         // Progressbar styling
         foreach (var pb in _root.Query("unity-progress-bar").Build())
         {
-            pb.style.marginBottom = 6;
+            pb.style.marginBottom = 9;
             pb.style.marginLeft = 3;
             pb.style.marginRight = 3;
         }
@@ -30,7 +30,6 @@ public class CatListEntryController
     {
         cat.Bind(_root);
 
-        // ToDo: Set Image
         _avatar.style.unityBackgroundScaleMode = ScaleMode.ScaleToFit;
         _avatar.style.backgroundImage = new StyleBackground(cat.Picture);
     }

@@ -149,13 +149,13 @@ public class DeliveryManager : MonoBehaviour
             if (cat.CurrentActivity is Resting)
             {
                 // Upgrades for Base will give more recreation for energy
-                cat.EnergyStatus += 1;
+                cat.Energy += 1;
             }
             else if (cat.CurrentActivity is Delivering)
             {
-                cat.EnergyStatus -= 1;
+                cat.Energy -= 1;
             }
-            Debug.Log(cat.Name + ": " + cat.EnergyStatus);
+            Debug.Log(cat.Name + ": " + cat.Energy);
             Debug.Log(cat.Name + ": " + cat.Hunger);
         }
     }

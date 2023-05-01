@@ -5,6 +5,7 @@ using UnityEngine;
 public class Cat : UINotifyProperty
 {
     // CAT
+    private string name;
     public string Name
     {
         get => name;
@@ -24,21 +25,34 @@ public class Cat : UINotifyProperty
     public int WeightCapacity { get; set; }
 
     // Stats
-    public int Hunger { get; set; }
-
-    private int _energyStatus;
-    private string name;
-
-    public int EnergyStatus
+    private float hunger;
+    private float energy;
+  
+    public float Energy
     {
-        get { return _energyStatus; }
+        get { return energy; }
         set
         {
             if (value <= 100 && value >= 0)
-                _energyStatus = value;
+            {
+                energy = value;
+                NotifyValueChanged(value);
+            }
         }
     }
 
+    public float Hunger
+    { 
+        get => hunger; 
+        set
+        {
+            if (value <= 100 && value >= 0)
+            {
+                hunger = value;
+                NotifyValueChanged(value);
+            } 
+        }
+    }
 
     public Activity CurrentActivity { get; set; }
 
@@ -50,7 +64,7 @@ public class Cat : UINotifyProperty
         Picture = picture;
         WeightCapacity = weightCapacity;
         Hunger = 100;
-        EnergyStatus = 90;
+        Energy = 90;
         Price = price;
     }
 
@@ -68,9 +82,9 @@ public class Cat : UINotifyProperty
 
         // Stats
         Hunger = 100;
-        EnergyStatus = 100;
+        Energy = 100;
 
-        Picture = sprite; 
+        Picture = sprite;
     }
 
     public void DoActivity()
@@ -80,7 +94,7 @@ public class Cat : UINotifyProperty
 
     public override string ToString()
     {
-        string s = $"CAT: {Name}\nPerks: WeightCapacity {WeightCapacity}, Price {Price} - Stats: Hunger {Hunger}, Engergy {EnergyStatus}";
+        string s = $"CAT: {Name}\nPerks: WeightCapacity {WeightCapacity}, Price {Price} - Stats: Hunger {Hunger}, Engergy {Energy}";
         return s;
     }
 

@@ -1,11 +1,25 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting.Antlr3.Runtime.Misc;
 using UnityEngine;
 using UnityEngine.U2D;
+using UnityEngine.UIElements;
+
 
 public class Shelter : MonoBehaviour
 {
     public List<Cat> ShelterCats = new List<Cat>();
+
+    public static Shelter Instance;
+
+    private void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+    }
 
     public void OneDayOver()
     {
@@ -34,4 +48,6 @@ public class Shelter : MonoBehaviour
     {
         return null;
     }
+
+
 }

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5611982648221006740}
   - component: {fileID: 5611982648221006742}
   - component: {fileID: 5611982648221006741}
-  - component: {fileID: 5611982648221006743}
+  - component: {fileID: 6382622083714944378}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -46,10 +46,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b45b29d40da8acd4a82f256cea0e9e02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Sprites:
-  - {fileID: 21300000, guid: fbfabf7134b35ee45ae48bd5fedfbfdf, type: 3}
-  - {fileID: 21300000, guid: 24ea276035ffcfb4fb0f3a88a55cd081, type: 3}
-  Shelter: {fileID: 0}
+  CatAtlas: {fileID: 4343727234628468602, guid: 3983d0ff8f31ec54cb24d947ea9cdc62, type: 2}
 --- !u!114 &5611982648221006741
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -64,7 +61,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timerIsRunning: 0
   gameManager: {fileID: 5611982648221006738}
---- !u!114 &5611982648221006743
+--- !u!114 &6382622083714944378
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -76,4 +73,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34c3cdba98e0b564ab25018136c8091c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CatAtlas: {fileID: 4343727234628468602, guid: 3983d0ff8f31ec54cb24d947ea9cdc62, type: 2}

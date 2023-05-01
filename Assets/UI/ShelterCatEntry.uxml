@@ -1,0 +1,19 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI/CatStyles.uss?fileID=7433441132597879392&amp;guid=55de121932f846646948ae19ae0b6fc5&amp;type=3#CatStyles" />
+    <ui:VisualElement name="Container" style="flex-direction: row; flex-grow: 1;">
+        <ui:VisualElement name="Avatar" class="avatar" style="flex-grow: 0.2; padding-left: 0; padding-right: 0; width: auto; height: auto; padding-top: 0; padding-bottom: 0; margin-left: 10px; margin-right: 10px;" />
+        <ui:VisualElement style="flex-grow: 0.8;">
+            <ui:VisualElement name="NameContainer" style="flex-direction: row; justify-content: space-between;">
+                <ui:Label text="Milchreis" display-tooltip-when-elided="true" name="lblName" binding-path="name" class="catName" style="margin-top: 10px; margin-bottom: 5px; padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 0;" />
+            </ui:VisualElement>
+            <ui:VisualElement name="WeightCapacityContainer" style="flex-direction: row; height: 22px; margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0;">
+                <ui:Label text="Weight Capacity: " display-tooltip-when-elided="true" name="lblWeightCapacity" class="catInfo" style="padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 0;" />
+                <ui:Label text="1000" display-tooltip-when-elided="true" name="WeightCapacity" binding-path="weightCapacity" class="catInfo" style="padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 0;" />
+            </ui:VisualElement>
+            <ui:VisualElement name="PriceContainer" style="flex-direction: row; height: 22px; margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0;">
+                <ui:Label text="Price: " display-tooltip-when-elided="true" name="lblPrice" class="catInfo" style="padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 0;" />
+                <ui:Label text="100" display-tooltip-when-elided="true" name="Price" binding-path="price" class="catInfo" style="padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 0;" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

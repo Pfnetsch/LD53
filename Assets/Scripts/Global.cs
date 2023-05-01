@@ -9,7 +9,7 @@ public static class Global
     public static int NumberOfGameDays = 7;
 
     // Money
-    public static int StartingMoney = 100;
+    public static int StartingMoney = 1000;
     public static int FoodCost = 10;
 
     // Day Points

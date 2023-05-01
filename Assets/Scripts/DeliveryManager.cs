@@ -9,6 +9,9 @@ public class DeliveryManager : MonoBehaviour
 
     public List<Cat> CatForce { get; set; } = new List<Cat>();
 
+    public int Money = Global.StartingMoney;
+    private int FoodCost = Global.FoodCost;
+
     public SpriteAtlas CatAtlas;
     private List<int> _notUsedSprites = new List<int> { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27 };
 
@@ -23,8 +26,8 @@ public class DeliveryManager : MonoBehaviour
     void Start()
     {
         // Add Starter Cats to List
-        Cat starterCat1 = new Cat("Gin", "Gin is very lively and loves to play with other cats.", GetNewCatSprite(), 2000, 100);
-        Cat starterCat2 = new Cat("Tonic", "Tonic is a little shy with strangest but loves to cuddle.", GetNewCatSprite(), 2000, 100);
+        Cat starterCat1 = new Cat("Gin", "Gin is very lively and loves to play with other cats.", GetNewCatSprite(), 1000, 100);
+        Cat starterCat2 = new Cat("Tonic", "Tonic is a little shy with strangest but loves to cuddle.", GetNewCatSprite(), 1000, 100);
         starterCat1.CurrentActivity = new Delivering(GenerateDelivery());
         starterCat2.CurrentActivity = new Resting();
         CatForce = new List<Cat>();
@@ -89,9 +92,6 @@ public class DeliveryManager : MonoBehaviour
     }
 
     // MONEY
-    private int Money = Global.StartingMoney;
-    private int FoodCost = Global.FoodCost;
-
     public void AddMoney(int income)
     {
         Money += income;

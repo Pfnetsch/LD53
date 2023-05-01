@@ -128,6 +128,8 @@ public class Cat : UINotifyProperty
         Energy = 100;
 
         Picture = sprite;
+
+        CurrentActivity = new Resting();
     }
 
     private string GetRandomCatBio()

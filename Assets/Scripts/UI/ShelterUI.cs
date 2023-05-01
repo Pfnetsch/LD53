@@ -12,6 +12,9 @@ public class ShelterUI : MonoBehaviour
     private UIDocument _shelterUI;
     private ListView _listViewShelterCats;
     private Button _shelterBackButton;
+    private Button _shelterGetCatButton;
+
+    private Cat _selectedShelterCat;
 
 
     private void OnEnable()
@@ -22,9 +25,13 @@ public class ShelterUI : MonoBehaviour
 
         _listViewShelterCats = _shelterUI.rootVisualElement.Q("ShelterCatsListView") as ListView;
 
+        // Back
         _shelterBackButton = _shelterUI.rootVisualElement.Q("ShelterBackButton") as Button;
-
         _shelterBackButton.RegisterCallback<ClickEvent>(OnShelterBackButtonClick);
+
+        // Get Cat
+        _shelterGetCatButton = _shelterUI.rootVisualElement.Q("GetCatButton") as Button;
+        _shelterGetCatButton.RegisterCallback<ClickEvent>(OnGetCatButtonClick);
     }
 
     void Start()
@@ -62,7 +69,11 @@ public class ShelterUI : MonoBehaviour
         _listViewShelterCats.selectionType = SelectionType.Multiple;
 
         // Callback invoked when the user changes the selection inside the ListView
-        _listViewShelterCats.onSelectionChange += objects => Debug.Log("Item selected: " + objects.FirstOrDefault());
+        _listViewShelterCats.onSelectionChange += objects => {
+            Cat cat = objects.FirstOrDefault() as Cat;
+            Debug.Log("Item selected: " + cat);
+            _selectedShelterCat = cat;
+            };
 
         FillShelterCatList();
     }
@@ -75,6 +86,20 @@ public class ShelterUI : MonoBehaviour
     public void OnShelterBackButtonClick(ClickEvent evt)
     {
         _shelterUI.enabled = false;
-        // get ShelterCats from Shelter
+    }
+
+    public void OnGetCatButtonClick(ClickEvent evt)
+    {
+        if (_selectedShelterCat != null && DeliveryManager.Instance.Money >= _selectedShelterCat.Price)
+        {
+            DeliveryManager.Instance.Money -= _selectedShelterCat.Price;
+
+            DeliveryManager.Instance.CatForce.Add(_selectedShelterCat);
+
+            Shelter.Instance.ShelterCats.Remove(_selectedShelterCat);
+            _selectedShelterCat = null;
+
+            Debug.Log("bought Kittyyyyy");
+        }
     }
 }

@@ -2,6 +2,7 @@
     <ui:VisualElement name="ShelterVisualElement" style="height: 600px; background-color: rgb(56, 56, 56); width: 400px;">
         <ui:Label text="Shelter Cats" display-tooltip-when-elided="true" name="ShelterTitle" tooltip="Please only take cats that you can care for." />
         <ui:ListView focusable="true" name="ShelterCatsListView" />
+        <ui:Button text="Get Cat" display-tooltip-when-elided="true" name="GetCatButton" enable-rich-text="true" />
         <ui:Button text="Back" display-tooltip-when-elided="true" name="ShelterBackButton" />
     </ui:VisualElement>
 </ui:UXML>
